@@ -1,11 +1,11 @@
-$color-rojo: red;
-$color-azul: blue;
-$color-fondo: #f5f5f5;
-$color-boton: #007bff;
-$color-boton-hover: #0056b3;
-$color-texto: #333;
+$rojo: red;
+$azul: blue;
+$gris: #f5f5f5;
+$texto: #333;
+$boton: #007bff;
+$boton-hover: #0056b3;
 
-
+// Mixins
 @mixin tarjeta {
   background-color: #fff;
   border: 1px solid #ccc;
@@ -14,72 +14,101 @@ $color-texto: #333;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-
+// Base
 body {
   font-family: Arial, sans-serif;
-  background-color: $color-fondo;
+  background-color: $gris;
   margin: 1rem;
-  color: $color-texto;
+  color: $texto;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  z-index: 100;
+  text-decoration: none;
+
+  &:focus {
+    top: 0;
+  }
 }
 
 header {
-  background-color: $color-rojo;
+  background-color: $rojo;
   color: white;
   padding: 1rem;
   border-radius: 8px;
   text-align: center;
-}
 
-footer {
-  p {
-    color: $color-azul;
-    text-align: center;
-    padding: 1rem;
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+
+      &:focus {
+        outline: 2px solid #fff;
+      }
+    }
   }
 }
 
 .banner {
   background-color: #e0e0e0;
-  text-align: center;
   padding: 1rem;
   margin-top: 1rem;
   font-style: italic;
   border-radius: 8px;
+  text-align: center;
 }
 
-
-#productos {
-  ul {
-    list-style: none;
-    padding: 0;
-
-    li {
+main {
+  section {
+    h2 {
       margin-bottom: 1rem;
+    }
 
-      article {
-        @include tarjeta;
-        text-align: center;
+    ul {
+      list-style: none;
+      padding: 0;
 
-        img {
-          max-width: 100%;
-          height: auto;
-          margin-bottom: 0.5rem;
-        }
+      li {
+        margin-bottom: 1rem;
 
-        button {
-          background-color: $color-boton;
-          color: white;
-          border: none;
-          padding: 0.5rem 1rem;
-          border-radius: 4px;
-          cursor: pointer;
+        article {
+          @include tarjeta;
+          text-align: center;
 
-          &:hover {
-            background-color: $color-boton-hover;
+          img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 0.5rem;
           }
 
-          &:focus {
-            outline: 2px solid #000;
+          button {
+            background-color: $boton;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+
+            &:hover {
+              background-color: $boton-hover;
+            }
+
+            &:focus {
+              outline: 2px solid #000;
+            }
           }
         }
       }
@@ -87,25 +116,33 @@ footer {
   }
 }
 
+footer {
+  p {
+    color: $azul;
+    text-align: center;
+    padding: 1rem;
+  }
+}
 
+// Responsive
 @media (max-width: 600px) {
   .banner {
     display: none;
   }
 
-  #productos ul {
+  main section ul {
     display: block;
   }
 
-  #productos li {
+  main section li {
     width: 100%;
   }
 
   header {
-    background-color: $color-rojo;
+    background-color: $rojo;
   }
 
   footer p {
-    color: $color-azul;
+    color: $azul;
   }
 }
