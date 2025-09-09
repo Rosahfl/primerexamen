@@ -1,0 +1,115 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 1rem;
+  color: #333;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  z-index: 100;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+header {
+  background-color: red;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+header nav ul li a:focus {
+  outline: 2px solid #fff;
+}
+
+.banner {
+  background-color: #e0e0e0;
+  padding: 1rem;
+  margin-top: 1rem;
+  font-style: italic;
+  border-radius: 8px;
+  text-align: center;
+}
+
+main section h2 {
+  margin-bottom: 1rem;
+}
+main section ul {
+  list-style: none;
+  padding: 0;
+}
+main section ul li {
+  margin-bottom: 1rem;
+}
+main section ul li article {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+main section ul li article img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+main section ul li article button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+main section ul li article button:hover {
+  background-color: #0056b3;
+}
+main section ul li article button:focus {
+  outline: 2px solid #000;
+}
+
+footer p {
+  color: blue;
+  text-align: center;
+  padding: 1rem;
+}
+
+@media (max-width: 600px) {
+  .banner {
+    display: none;
+  }
+  main section ul {
+    display: block;
+  }
+  main section li {
+    width: 100%;
+  }
+  header {
+    background-color: red;
+  }
+  footer p {
+    color: blue;
+  }
+}
+
+/*# sourceMappingURL=stales.css.map */
