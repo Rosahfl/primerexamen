@@ -29,9 +29,11 @@ header {
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
+  color: #e63946;
 }
+
 
 header ul {
   list-style: none;
@@ -44,12 +46,16 @@ header ul {
 header li {
   font-weight: bold;
   cursor: pointer;
+  transition: color 0.3s ease;
 }
 
+header li:hover {
+  color: #e63946;
+}
 
 .banner {
   background-color: #f7f5f5;
-  color: rgb(19, 18, 18);
+  color: #131212;
   font-size: 2rem;
   padding: 2rem;
   margin: 2rem auto;
@@ -61,6 +67,7 @@ header li {
   justify-content: center;
   align-items: center;
 }
+
 
 .Producto {
   display: grid;
@@ -107,9 +114,10 @@ header li {
   margin-bottom: 1rem;
 }
 
+/* 🛒 Botón */
 button {
   background-color: #d0dff0;
-  color: rgb(7, 7, 7);
+  color: #070707;
   border: 2px solid black;
   padding: 0.5rem 1rem;
   border-radius: 4px;
@@ -128,7 +136,7 @@ footer {
   border-top: 2px solid black;
   width: 100%;
   max-width: 800px;
-  color: rgb(163, 163, 238);
+  color: #0d0d0e;
   font-size: 0.9rem;
   text-align: center;
 }
