@@ -1,91 +1,61 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #1f0202;
-  margin: 1rem;
-  color: #333;
-  .caja {
-h1{
-color: black;
-font-family: arial;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-  }
+body{
+    margin-left: 10%;
+    margin-right: 10%;
 }
-
-header {
-  background-color: red;
-  color: white;
-  padding: 1rem;
-  border-radius: 8px;
-  text-align: center;
+header{
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-around;   
+    align-items: center;
 }
-footer p {
-  color: blue;
-  text-align: center;
-  padding: 1rem;
+ul{
+    display: flex;
 }
-
-.banner {
-  background-color: #e0e0e0;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 1rem;
-  font-style: italic;
-  border-radius: 8px;
+li{
+    display: flex;
+    margin: 20px;
 }
-
-/* Productos en formato tarjeta */
-#productos ul {
-  list-style: none;
-  padding: 0;
+main{
+    border: 2px solid black;
 }
-
-#productos li {
-  margin-bottom: 1rem;
+.banner{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin: 5%;
+    border: 2px solid black;
+    height: 200px;
+    font-size: 40px;
+    padding: 50px;
+    font-family: sans-serif;
 }
-
-article {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
+.Producto{
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 3fr;
+    grid-template-areas: "ca ca ca"
+                        "pro1 pro2 pro3";
+                        
 }
-
-article img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 0.5rem;
+.pr_titulo{
+    grid-area: ca;
 }
-
-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
+.p1{
+    grid-area: pro1;
 }
-
-button:focus {
-  outline: 2px solid #000;
+.p2{
+    grid-area: pro2;
 }
-
-
-@media (max-width: 600px) {
-  .banner {
-    display: none;
-  }
-
-  #productos ul {
-    display: block;
-  }
-
-  #productos li {
-    width: 100%;
-  }
-
-  article {
-    margin: 0 auto;
-  }
+.p3{
+    grid-area: pro3;
+}
+img{
+    width: 50%;
+    border: 2px solid black;
 }

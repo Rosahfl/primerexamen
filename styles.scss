@@ -1,149 +1,164 @@
-$rojo: red;
-$azul: blue;
-$gris: #f5f5f5;
-$texto: #c91414;
-$boton: #6d8fb3;
-$boton-hover: #597ea5;
+$color-borde: black;
+$color-fondo: #1f0202;
+$color-banner: #f1faee;
+$color-boton: #007bff;
+$color-boton-hover: #0056b3;
 
 
-@mixin tarjeta {
-  background-color:$fondo;
-  border: 4px solid black;
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0px 0px 2px black;
- 
-  }
- .caja{
-    @include caja_personalizada($fondo: rgb(233, 233, 212));
- }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: $gris;
-  margin: 1rem;
-  color: $texto;
+  margin: 0 10%;
+  background-color: $color-fondo;
+  font-family: sans-serif;
 }
 
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: #c50b0b;
-  color: #fff;
-  padding: 8px;
-  z-index: 100;
-  text-decoration: none;
-
-  &:focus {
-    top: 0;
-  }
-}
 
 header {
-  background-color: $rojo;
-  color: white;
-  padding: 1rem;
-  border-radius: 8px;
-  text-align: center;
+  border: 2px solid $color-borde;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 
-  nav ul {
-    list-style: none;
+  ul {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
 
-    li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-
-      &:focus {
-        outline: 2px solid #fff;
-      }
+    li {
+      margin: 20px;
+      cursor: pointer;
     }
   }
 }
 
-.banner {
-  background-color: #e0e0e0;
-  padding: 1rem;
-  margin-top: 1rem;
-  font-style: italic;
-  border-radius: 8px;
-  text-align: center;
-}
 
 main {
-  section {
-    h2 {
-      margin-bottom: 1rem;
+  border: 2px solid $color-borde;
+
+  .banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5%;
+    border: 2px solid $color-borde;
+    height: 200px;
+    font-size: 40px;
+    padding: 50px;
+    background-color: $color-banner;
+  }
+
+  .Producto {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 3fr;
+    grid-template-areas:
+      "ca ca ca"
+      "pro1 pro2 pro3";
+
+    .pr_titulo {
+      grid-area: ca;
+      text-align: center;
+      font-size: 2rem;
+      margin: 1rem 0;
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
+    article {
+      background-color: white;
+      border: 3px solid $color-borde;
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 1rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease;
 
-      li {
+      &:hover {
+        transform: scale(1.03);
+      }
+
+      img {
+        width: 80%;
+        border: 2px solid $color-borde;
+        border-radius: 4px;
         margin-bottom: 1rem;
+      }
 
-        article {
-          @include tarjeta;
-          text-align: center;
+      button {
+        background-color: $color-boton;
+        color: white;
+        border: 2px solid $color-borde;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
 
-          img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 0.5rem;
-          }
+        &:hover {
+          background-color: $color-boton-hover;
+        }
 
-          button {
-            background-color: $boton;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-
-            &:hover {
-              background-color: $boton-hover;
-            }
-
-            &:focus {
-              outline: 2px solid #000;
-            }
-          }
+        &:focus {
+          outline: 2px solid $color-borde;
         }
       }
     }
+
+    .p1 { grid-area: pro1; }
+    .p2 { grid-area: pro2; }
+    .p3 { grid-area: pro3; }
   }
 }
+
 
 footer {
-  p {
-    color: $azul;
-    text-align: center;
-    padding: 1rem;
-  }
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  border-top: 2px solid $color-borde;
+  color: blue;
 }
 
+
 @media (max-width: 600px) {
+  header {
+    flex-direction: column;
+
+    ul {
+      flex-direction: column;
+      align-items: center;
+
+      li {
+        margin: 10px 0;
+      }
+    }
+  }
+
   .banner {
     display: none;
   }
 
-  main section ul {
-    display: block;
+  .Producto {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "ca"
+      "pro1"
+      "pro2"
+      "pro3";
+
+    article {
+      width: 100%;
+      margin: 1rem auto;
+    }
+
+    img {
+      width: 100%;
+    }
   }
 
-  main section li {
-    width: 100%;
+  body {
+    margin: 0 5%;
+    font-size: 14px;
   }
-
-  header {
-    background-color: $rojo;
-  }
-
-  footer p {
-    color: $azul;
-  }
-}
