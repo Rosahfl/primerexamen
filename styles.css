@@ -145,12 +145,11 @@ footer {
 @media (max-width: 600px) {
   header ul {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
   }
 
   .banner {
-    font-size: 1.5rem;
-    padding: 1rem;
+    display: nane;
   }
 
   .Producto {
